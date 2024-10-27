@@ -4,10 +4,45 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import useAuth from '../../../hooks/useAuth'
 import avatarImg from '../../../assets/images/placeholder.jpg'
+import logo from '../../../assets/images/contest-speech-bubble-banner-business-marketing-advertising-vector-illustration-banner-business-marketing-advertising_602351-1277.avif'
+import useAxiosSecure from '../../../hooks/useAxiosSecure'
+import toast from 'react-hot-toast'
+import HostModal from '../../Dashboard/modal/HostModal'
+
 
 const Navbar = () => {
+  const axiosSecure = useAxiosSecure()
   const { user, logOut } = useAuth()
   const [isOpen, setIsOpen] = useState(false)
+
+  // for modal
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const closeModal = () => {
+    setIsModalOpen(false)
+  }
+  const modalHandler = async () => {
+    console.log('I want to be a host')
+    try {
+      const currentUser = {
+        email: user?.email,
+        role: 'guest',
+        status: 'Requested',
+      }
+      const { data } = await axiosSecure.put(`/user`, currentUser)
+      console.log(data)
+      if (data.modifiedCount > 0) {
+        toast.success('Success! Please wait for admin confirmation')
+      } else {
+        toast.success('Please!, Wait for admin approval👊')
+      }
+    } catch (err) {
+      console.log(err)
+      toast.error(err.message)
+    } finally {
+      closeModal()
+    }
+  }
+
 
   return (
     <div className='fixed w-full bg-white z-10 shadow-sm'>
@@ -16,22 +51,30 @@ const Navbar = () => {
           <div className='flex flex-row  items-center justify-between gap-3 md:gap-0'>
             {/* Logo */}
             <Link to='/'>
-             <h2 className='text-xl font-semibold'>Contest-Platform</h2>
+              <div className='flex items-center'>
+                <img src={logo} className='h-[40px]' alt="" />
+                <h2 className='text-xl font-semibold ml-2'>Contest-Platform</h2>
+              </div>
             </Link>
             {/* Dropdown Menu */}
             <div className='relative'>
               <div className='flex flex-row items-center gap-3'>
                 {/* Become A Host btn */}
                 <div className='hidden md:block'>
-                  {!user && (
-                    <button
-                      disabled={!user}
-                      className='disabled:cursor-not-allowed cursor-pointer hover:bg-neutral-100 py-3 px-4 text-sm font-semibold rounded-full  transition'
-                    >
-                      Host your home
-                    </button>
-                  )}
+
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className='disabled:cursor-not-allowed cursor-pointer hover:bg-neutral-100 py-3 px-4 text-sm font-semibold rounded-full  transition'
+                  >
+                    Host your home
+                  </button>
                 </div>
+                {/* modal */}
+                <HostModal
+                 isOpen={isModalOpen}
+                 closeModal={closeModal}
+                 modalHandler={modalHandler}
+                ></HostModal>
                 {/* Dropdown btn */}
                 <div
                   onClick={() => setIsOpen(!isOpen)}
@@ -63,6 +106,13 @@ const Navbar = () => {
 
                     {user ? (
                       <>
+                        {/* {user && user.displayName} */}
+                        <Link
+                          to='/dashboard'
+                          className='block px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                        >
+                          Dashboard
+                        </Link>
                         <div
                           onClick={logOut}
                           className='px-4 py-3 hover:bg-neutral-100 transition font-semibold cursor-pointer'

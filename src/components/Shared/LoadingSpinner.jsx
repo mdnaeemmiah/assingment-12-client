@@ -15,7 +15,7 @@ const LoadingSpinner = ({ smallHeight }) => {
   )
 }
 
-LoadingSpinner.propTypes = {
+LoadingSpinner.propTypes = {  
   smallHeight: PropTypes.bool,
 }
 

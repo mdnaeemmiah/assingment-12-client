@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const Card = ({ room }) => {
   return (
-    <Link to={`/room/${room?._id}`} className='col-span-1 cursor-pointer group'>
+    <Link to={`/contest/${room?._id}`} className='col-span-1 cursor-pointer group'>
       <div className='flex flex-col gap-2 w-full'>
         <div
           className='
