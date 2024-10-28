@@ -12,6 +12,9 @@ import ManageUsers from '../pages/Dashboard/Admin/ManageUsers'
 import AddContest from '../pages/Dashboard/Host/AddContest'
 import MyCreatedContest from '../pages/Dashboard/Host/MyCreatedContest'
 import ManageContestPage from '../pages/Dashboard/Admin/ManageContestPage'
+import MyContest from '../pages/Dashboard/User/MyContest'
+import MyWinningContest from '../pages/Dashboard/User/MyWinningContest'
+import ManageContest from '../pages/Dashboard/Host/ManageContest '
 
 export const router = createBrowserRouter([
   {
@@ -56,8 +59,20 @@ export const router = createBrowserRouter([
         element:<ManageUsers></ManageUsers>
       },
       {
-       path:'manage-contest',
+       path:'manage-contest-admin',
         element:<ManageContestPage></ManageContestPage>
+      },
+      {
+       path:'my-contest',
+        element:<MyContest></MyContest>
+      },
+      {
+       path:'my-winning',
+        element:<MyWinningContest></MyWinningContest>
+      },
+      {
+       path:'manage-contest',
+        element:<ManageContest></ManageContest>
       },
     ]
   }

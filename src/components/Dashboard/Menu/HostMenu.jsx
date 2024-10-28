@@ -8,8 +8,8 @@ const HostMenu = () => {
       <MenuItem icon={MdHomeWork} label='My Created Contest' address='my-created' />
       <MenuItem
         icon={MdOutlineManageHistory}
-        label='Manage Bookings'
-        address='manage-bookings'
+        label='Manage Contest '
+        address='manage-contest'
       />
     </>
   )

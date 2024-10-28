@@ -115,7 +115,7 @@ const Sidebar = () => {
           >
             <GrLogout className='w-5 h-5' />
 
-            <Link to='/login' className='mx-4 font-medium'>Logout</Link>
+            <NavLink to='/login' className='mx-4 font-medium'>Logout</NavLink>
           </button>
         </div>
       </div>

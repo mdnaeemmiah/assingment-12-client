@@ -1,29 +1,11 @@
 
-
 import { Helmet } from 'react-helmet-async'
-import useAxiosSecure from '../../../hooks/useAxiosSecure'
-import { useQuery } from '@tanstack/react-query'
-import LoadingSpinner from '../../../components/Shared/LoadingSpinner'
-import ContestsDataRow from '../../../components/Dashboard/Table/ContestsDataRow'
 
-const ManageContestPage = () => {
-    const axiosSecure = useAxiosSecure()
-    //   Fetch users Data
-    const { data: users = [],  isLoading, refetch,} = useQuery({
-      queryKey: ['users'],
-      queryFn: async () => {
-        const { data } = await axiosSecure.get(`/users`)
-        return data
-      },
-    })
-    console.log(users);
-
-    if (isLoading) return <LoadingSpinner />
-   
+const MyWinningContest = () => {
   return (
     <>
       <Helmet>
-        <title>Manage Contest Page</title>
+        <title>My Winning Contest</title>
       </Helmet>
 
       <div className='container mx-auto px-4 sm:px-8'>
@@ -37,25 +19,35 @@ const ManageContestPage = () => {
                       scope='col'
                       className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
                     >
-                      email
+                     image
                     </th>
                     <th
                       scope='col'
                       className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
                     >
-                      Action
+                     position
+                    </th>
+                    <th
+                      scope='col'
+                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                    >
+                      Price
+                    </th>
+                    <th
+                      scope='col'
+                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                    >
+                     date
+                    </th>
+                    <th
+                      scope='col'
+                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                    >
+                      details
                     </th>
                   </tr>
                 </thead>
-                <tbody>{/* Table Row Data */}
-                {users.map(user => (
-                    <ContestsDataRow
-                      key={user?._id}
-                      user={user}
-                      refetch={refetch}
-                    />
-                  ))}
-                </tbody>
+                <tbody>{/* Table Row Data */}</tbody>
               </table>
             </div>
           </div>
@@ -65,4 +57,4 @@ const ManageContestPage = () => {
   )
 }
 
-export default ManageContestPage
+export default MyWinningContest

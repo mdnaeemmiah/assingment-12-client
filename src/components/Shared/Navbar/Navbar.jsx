@@ -66,7 +66,7 @@ const Navbar = () => {
                     onClick={() => setIsModalOpen(true)}
                     className='disabled:cursor-not-allowed cursor-pointer hover:bg-neutral-100 py-3 px-4 text-sm font-semibold rounded-full  transition'
                   >
-                    Host your home
+                    Creator your home
                   </button>
                 </div>
                 {/* modal */}

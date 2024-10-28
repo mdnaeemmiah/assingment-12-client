@@ -7,7 +7,7 @@ const AdminMenu = () => {
   return (
     <>
       <MenuItem icon={FaUserCog} label='Manage Users' address='manage-users' />
-      <MenuItem icon={IoMdContacts} label='Manage Contest Page' address='manage-contest' />
+      <MenuItem icon={IoMdContacts} label='Manage Contest Page' address='manage-contest-admin' />
     </>
   )
 }
