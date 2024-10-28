@@ -32,7 +32,7 @@ const Sidebar = () => {
     setToggle(event.target.checked)
   }
   return (
-    <>
+    <div className=''>
       {/* Small Screen Navbar */}
       <div className='bg-gray-100 text-gray-800 flex justify-between md:hidden'>
         <div>
@@ -56,7 +56,7 @@ const Sidebar = () => {
 
       {/* Sidebar */}
       <div
-        className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden bg-gray-100 w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${isActive && '-translate-x-full'
+        className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden bg-orange-400 w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${isActive && '-translate-x-full'
           }  md:translate-x-0  transition duration-200 ease-in-out`}
       >
         <div>
@@ -74,20 +74,16 @@ const Sidebar = () => {
           {/* Nav Items */}
           <div className='flex flex-col justify-between flex-1 mt-6'>
             {/* Conditional toggle button here.. */}
-            {role === 'host' && (
+            {role === 'creator' && (
               <ToggleBtn toggleHandler={toggleHandler} toggle={toggle} />
             )}
 
             {/*  Menu Items */}
             <nav>
               {/* Statistics */}
-              <MenuItem
-                label='Statistics'
-                address='/dashboard'
-                icon={BsGraphUp}
-              />
+             
               {role === 'guest' && <GuestMenu />}
-              {role === 'host' ? (
+              {role === 'creator' ? (
                 toggle ? (
                   <HostMenu />
                 ) : (
@@ -119,7 +115,7 @@ const Sidebar = () => {
           </button>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

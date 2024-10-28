@@ -45,12 +45,10 @@ const BookingModal = ({ closeModal, isOpen, bookingInfo, refetch }) => {
                   as='h3'
                   className='text-lg font-medium text-center leading-6 text-gray-900'
                 >
-                  Review Info Before Reserve
+                  Review Info Before Contest
                 </DialogTitle>
                 <div className='mt-2'>
-                  <p className='text-sm text-gray-500'>
-                    Room: {bookingInfo.title}
-                  </p>
+                 
                 </div>
                 <div className='mt-2'>
                   <p className='text-sm text-gray-500'>
@@ -59,19 +57,13 @@ const BookingModal = ({ closeModal, isOpen, bookingInfo, refetch }) => {
                 </div>
                 <div className='mt-2'>
                   <p className='text-sm text-gray-500'>
-                    Guest: {bookingInfo.guest.name}
+                    user: {bookingInfo.guest.name}
                   </p>
                 </div>
                 <div className='mt-2'>
                   <p className='text-sm text-gray-500'>
-                    From: {format(new Date(bookingInfo.from), 'PP')} - To:{' '}
+                    To:{' '}
                     {format(new Date(bookingInfo.to), 'PP')}
-                  </p>
-                </div>
-
-                <div className='mt-2'>
-                  <p className='text-sm text-gray-500'>
-                    Price: $ {bookingInfo.price}
                   </p>
                 </div>
                 <hr className='mt-8 ' />

@@ -109,7 +109,7 @@ const CheckoutForm = ({ closeModal, bookingInfo, refetch }) => {
         // update ui
         refetch()
         closeModal()
-        toast.success('Room Booked Successfully')
+        toast.success('Contest Booked Successfully')
         navigate('/dashboard/my-contest')
       } catch (err) {
         console.log(err)
