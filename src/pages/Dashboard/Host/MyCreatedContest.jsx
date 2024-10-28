@@ -82,14 +82,9 @@ const MyCreatedContest = () => {
                       scope='col'
                       className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
                     >
-                      From
+                      Date
                     </th>
-                    <th
-                      scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
-                    >
-                      To
-                    </th>
+                  
                     <th
                       scope='col'
                       className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'

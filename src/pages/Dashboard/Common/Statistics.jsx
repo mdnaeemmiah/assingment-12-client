@@ -12,7 +12,7 @@ const Statistics = () => {
   return (
     <> 
     {role === 'admin' && <AdminStatistics></AdminStatistics>}
-    {role === 'host' && <CreatorStatistics></CreatorStatistics>}
+    {role === 'creator' && <CreatorStatistics></CreatorStatistics>}
     {role === 'guest' && <UserStatistics></UserStatistics>}
     </>
   )
