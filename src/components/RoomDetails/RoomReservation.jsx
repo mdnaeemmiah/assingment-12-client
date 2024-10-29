@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 import Button from '../Shared/Button/Button'
 import { useState } from 'react'
-import { DateRange } from 'react-date-range'
 import useAuth from '../../hooks/useAuth'
 import BookingModal from '../Dashboard/modal/BookingModal'
 const RoomReservation = ({ room, refetch }) => {
@@ -29,7 +28,7 @@ const RoomReservation = ({ room, refetch }) => {
         <Button 
           disabled={room?.booked}
           onClick={() => setIsOpen(true)}
-          label={room?.booked ? 'Booked' : 'Continue'}
+          label={room?.booked ? 'Booked' : 'Enrolled'}
         />
       </div>
 

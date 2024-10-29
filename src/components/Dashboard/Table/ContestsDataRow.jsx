@@ -1,9 +1,4 @@
 import PropTypes from 'prop-types'
-import useAuth from '../../../hooks/useAuth'
-import { useState } from 'react'
-import useAxiosSecure from '../../../hooks/useAxiosSecure'
-import { useMutation } from '@tanstack/react-query'
-import toast from 'react-hot-toast'
 const  ContestsDataRow = ({ user, refetch }) => {
 
  return (
@@ -20,10 +15,11 @@ const  ContestsDataRow = ({ user, refetch }) => {
           ></span>
           <span className='relative'>comments</span>
         </span>
-        {/* Update User Modal */}
+        {/* comments User Modal */}
+       
       </td>
     </tr>
-  )
+  )   
 }
 
 ContestsDataRow.propTypes = {
