@@ -15,6 +15,7 @@ import ManageContestPage from '../pages/Dashboard/Admin/ManageContestPage'
 import MyContest from '../pages/Dashboard/User/MyContest'
 import MyWinningContest from '../pages/Dashboard/User/MyWinningContest'
 import ManageContest from '../pages/Dashboard/Host/ManageContest '
+import PrivateRoute from './PrivateRoute'
 
 export const router = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/contest/:id',
-        element: <RoomDetails />,
+        element: <PrivateRoute><RoomDetails /></PrivateRoute>
       },
     ],
   },
@@ -36,43 +37,43 @@ export const router = createBrowserRouter([
   { path: '/signup', element: <SignUp /> },
   {
     path:'/dashboard',
-    element:<DashboardLayout></DashboardLayout>,
+    element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
     children:[
       {
         index:'true',
-        element:<Statistics></Statistics>
+        element:<PrivateRoute><Statistics></Statistics></PrivateRoute>
       },
       {
        path:'add-contest',
-        element:<AddContest></AddContest>
+        element:<PrivateRoute><AddContest></AddContest></PrivateRoute>
       },
       {
        path:'my-created',
-        element:<MyCreatedContest></MyCreatedContest>
+        element:<PrivateRoute><MyCreatedContest></MyCreatedContest></PrivateRoute>
       },
       {
        path:'profile',
-        element:<Profile></Profile>
+        element:<PrivateRoute><Profile></Profile></PrivateRoute>
       },
       {
        path:'manage-users',
-        element:<ManageUsers></ManageUsers>
+        element:<PrivateRoute><ManageUsers></ManageUsers></PrivateRoute>
       },
       {
        path:'manage-contest-admin',
-        element:<ManageContestPage></ManageContestPage>
+        element:<PrivateRoute><ManageContestPage></ManageContestPage></PrivateRoute>
       },
       {
        path:'my-contest',
-        element:<MyContest></MyContest>
+        element:<PrivateRoute><MyContest></MyContest></PrivateRoute>
       },
       {
        path:'my-winning',
-        element:<MyWinningContest></MyWinningContest>
+        element:<PrivateRoute><MyWinningContest></MyWinningContest></PrivateRoute>
       },
       {
        path:'manage-contest',
-        element:<ManageContest></ManageContest>
+        element:<PrivateRoute><ManageContest></ManageContest></PrivateRoute>
       },
     ]
   }
