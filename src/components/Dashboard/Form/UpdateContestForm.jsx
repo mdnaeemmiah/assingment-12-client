@@ -33,18 +33,18 @@ const UpdateContestForm = ({
           </div>
           <div className='space-y-1 text-sm'>
             <label htmlFor='title' className='block text-gray-600'>
-              Title
+              Location
             </label>
             <input
               className='w-full px-4 py-3 text-gray-800 border border-rose-300 focus:outline-rose-500 rounded-md '
-              name='title'
-              id='title'
+              name='location'
+              id='location'
               type='text'
-              value={roomData?.title}
+              value={roomData?.location}
               onChange={e =>
-                setRoomData({ ...roomData, title: e.target.value })
+                setRoomData({ ...roomData, location: e.target.value })
               }
-              placeholder='Title'
+              placeholder='location'
               required
             />
           </div>
@@ -102,14 +102,15 @@ const UpdateContestForm = ({
                   <div className='bg-rose-500 text-white border border-gray-300 rounded font-semibold cursor-pointer p-1 px-3 hover:bg-rose-500'>
                     Upload Image
                   </div>
+                  
                 </label>
               </div>
             </div>
           </div>
-          <div className='flex justify-between gap-2'>
+          <div className=''>
             <div className='space-y-1 text-sm'>
               <label htmlFor='price' className='block text-gray-600'>
-                Price
+              Contest Price
               </label>
               <input
                 className='w-full px-4 py-3 text-gray-800 border border-rose-300 focus:outline-rose-500 rounded-md '
@@ -124,59 +125,23 @@ const UpdateContestForm = ({
                 required
               />
             </div>
-
-            <div className='space-y-1 text-sm'>
-              <label htmlFor='guest' className='block text-gray-600'>
-                Total guest
-              </label>
-              <input
-                className='w-full px-4 py-3 text-gray-800 border border-rose-300 focus:outline-rose-500 rounded-md '
-                name='total_guest'
-                id='guest'
-                value={roomData?.guests}
-                onChange={e =>
-                  setRoomData({ ...roomData, guests: e.target.value })
-                }
-                type='number'
-                placeholder='Total guest'
-                required
-              />
-            </div>
           </div>
 
-          <div className='flex justify-between gap-2'>
+          <div className=''>
             <div className='space-y-1 text-sm'>
-              <label htmlFor='bedrooms' className='block text-gray-600'>
-                Bedrooms
-              </label>
-              <input
-                className='w-full px-4 py-3 text-gray-800 border border-rose-300 focus:outline-rose-500 rounded-md '
-                name='bedrooms'
-                id='bedrooms'
-                value={roomData?.bedrooms}
-                onChange={e =>
-                  setRoomData({ ...roomData, bedrooms: e.target.value })
-                }
-                type='number'
-                placeholder='Bedrooms'
-                required
-              />
-            </div>
-
-            <div className='space-y-1 text-sm'>
-              <label htmlFor='bathrooms' className='block text-gray-600'>
+              <label htmlFor='money' className='block text-gray-600'>
                 Bathrooms
               </label>
               <input
                 className='w-full px-4 py-3 text-gray-800 border border-rose-300 focus:outline-rose-500 rounded-md '
-                name='bathrooms'
-                id='bathrooms'
-                value={roomData?.bathrooms}
+                name='money'
+                id='money'
+                value={roomData?.money}
                 onChange={e =>
-                  setRoomData({ ...roomData, bathrooms: e.target.value })
+                  setRoomData({ ...roomData, money: e.target.value })
                 }
                 type='number'
-                placeholder='Bathrooms'
+                placeholder='money'
                 required
               />
             </div>
